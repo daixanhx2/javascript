@@ -1,0 +1,9 @@
+table .btnedit {
+    color: rgb(130, 173, 238);
+    cursor: pointer;
+}
+
+table .btndelete {
+    color: rgb(130, 173, 238);
+    cursor: pointer;
+}

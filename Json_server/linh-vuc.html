@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/bootstrap/css/bootstrap.min.css">
+    <script src="./public/bootstrap/js/jquery-3.5.1.js"></script>
+    <script src="./public/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./public/fontawesome/css/all.css">
+    <link rel="stylesheet" href="./style.css">
+    <!-- <script src="./public/bootstrap/js/app.js"></script> -->
+    <!-- <script src="./public/bootstrap/js/test.js"></script> -->
+
+</head>
+
+<body>
+
+
+    <div class="container mt-3">
+
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary mb-3 fas fa-plus-square float-right mr-3" id="myBtn"></button>
+        <div class="container d-flex ">
+
+            <table class="table table-secondary list-fields " id="cong">
+
+                <tr>
+                    <th scope="col ">STT</th>
+                    <th scope="col ">Mã lĩnh vực</th>
+                    <th scope="col ">Tên lĩnh vực</th>
+                    <th scope="col ">Mô tả</th>
+                    <th scope="col ">Ngày tạo</th>
+                    <th scope="col ">Ngày cập nhật</th>
+                    <th scope="col ">Trạng thái</th>
+                    <th scope="col ">Edit</th>
+                    <th scope="col ">Delete</th>
+                </tr>
+                <!-- 
+                <tbody>
+                    <tr>
+                        <td scope="row ">1</td>
+                        <td>MaLinhVuc_10</td>
+                        <td>MaLinhVuc_10</td>
+                        <td>MaLinhVuc_10</td>
+                        <td>MaLinhVuc_10</td>
+                        <td>MaLinhVuc_10</td>
+                        <td class="text-success ">Hoạt động</td>
+                        <td><i class="fas fa-edit btnedit "></i></td>
+                        <td><i class="fas fa-trash-alt btndelete "></i></td>
+                    </tr>
+                    <tr>
+                        <td scope="row ">2</td>
+                        <td>MaLinhVuc_11</td>
+                        <td>MaLinhVuc_11</td>
+                        <td>MaLinhVuc_11</td>
+                        <td>MaLinhVuc_11</td>
+                        <td>MaLinhVuc_11</td>
+                        <td class="text-success ">Hoạt động</td>
+                        <td><i class="fas fa-edit btnedit "></i></td>
+                        <td><i class="fas fa-trash-alt btndelete "></i></td>
+                    </tr>
+
+                </tbody> -->
+
+            </table>
+        </div>
+        <!-- The Modal -->
+        <div class="modal fade edit" id="create">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Thêm Lĩnh Vực</h4>
+                        <button type="button" class="close"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <form class="mt-1">
+                                    <div class=" login-sec" class="form-group">
+                                        <label for="Malinhvuc">Mã lĩnh vực *</label>
+                                        <input type="Malinhvuc" class="form-control " id="Malinhvuc" name="Malinhvuc">
+                                    </div>
+                                    <div class="" class="form-group">
+                                        <label class="mt-2" for="Tenlinhvuc">Tên lĩnh vực *</label>
+                                        <input type="Tenlinhvuc" class="form-control " id="Tenlinhvuc" name="Tenlinhvuc">
+                                    </div>
+                                    <div class="" class="form-group">
+                                        <label class="mt-2" for="Mota">Mô tả *</label>
+                                        <input type="Mota" class="form-control " id="Mota" name="Mota">
+                                    </div>
+                                    <div class="" class="form-group">
+                                        <label class="mt-2" for="Trangthai">Trạng thái *</label>
+                                        <input type="Trangthai" class="form-control " id="Trangthai" name="Trangthai">
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger" id="save">Lưu</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade edit" id="update">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Sửa Lĩnh Vực</h4>
+                        <button type="button" class="close"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <form class="mt-1">
+                                    <div class=" login-sec" class="form-group">
+                                        <label for="Malinhvuc">Mã lĩnh vực *</label>
+                                        <input type="text" class="form-control " id="Malinhvuc" name="Malinhvuc">
+                                    </div>
+                                    <div class="" class="form-group">
+                                        <label class="mt-2" for="Tenlinhvuc">Tên lĩnh vực *</label>
+                                        <input type="text" class="form-control " id="Tenlinhvuc" name="Tenlinhvuc">
+                                    </div>
+                                    <div class="" class="form-group">
+                                        <label class="mt-2" for="Mota">Mô tả *</label>
+                                        <input type="text" class="form-control " id="Mota" name="Mota">
+                                    </div>
+                                    <div class="" class="form-group">
+                                        <label class="mt-2" for="Trangthai">Trạng thái *</label>
+                                        <input type="text" class="form-control " id="Trangthai" name="Trangthai">
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" id="save">Lưu</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="delete">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Xác nhận</h4>
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Bạn có chắc chắn muốn xóa không?
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đồng ý</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#myBtn ").click(function() {
+                $("#create ").modal();
+            });
+            $(".btnedit ").click(function() {
+                $("#update ").modal();
+            });
+
+            $(".btndelete ").click(function() {
+                $("#delete ").modal();
+            });
+        });
+        var fieldApi = 'http://localhost:3000/fields';
+
+
+        function start() {
+            getFields(renderFields);
+            handleCreateForm();
+
+
+        }
+        start();
+
+
+        function getFields(callback) {
+            fetch(fieldApi)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(callback);
+
+        }
+
+        function createField(data, callback) {
+            var options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify(data)
+            };
+            fetch(fieldApi, options)
+                .then(function(response) {
+                    response.json();
+
+                })
+                .then(callback);
+        }
+
+        function renderFields(fields) {
+            var listFieldsBlock =
+                document.querySelector('.list-fields');
+            var htmls = fields.map(function(fields) {
+                return `
+                
+            <table class="table table-secondary list-fields ">
+
+                
+                <tr>
+                    <th scope="col ">STT</th>
+                    <th scope="col ">Mã lĩnh vực</th>
+                    <th scope="col ">Tên lĩnh vực</th>
+                    <th scope="col ">Mô tả</th>
+                    <th scope="col ">Ngày tạo</th>
+                    <th scope="col ">Ngày cập nhật</th>
+                    <th scope="col ">Trạng thái</th>
+                    <th scope="col ">Edit</th>
+                    <th scope="col ">Delete</th>
+                </tr>
+
+                
+
+                    <tr>
+                        
+                        <th scope="col ">${fields.Malinhvuc}</th>
+                        <th scope="col ">${fields.Tenlinhvuc}</th>
+                        <th scope="col ">${fields.Mota}</th>
+                        <th scope="col ">${fields.Trangthai}</th>
+                        <th scope="col "></th>
+                        <th scope="col "></th>
+                        <th scope="col "></th>
+                        <td><i class="fas fa-edit btnedit "></i></td>
+                        <td><i class="fas fa-trash-alt btndelete "></i></td>
+                    </tr>   
+            </table>  
+           `;
+
+
+            });
+            listFieldsBlock.innerHTML = htmls.join('');
+
+        }
+
+
+
+        function handleCreateForm() {
+            var createBtn = document.querySelector('#save');
+            createBtn.onclick = function() {
+
+                var Malinhvuc = document.getElementById(['Malinhvuc']).value;
+
+                var Tenlinhvuc = document.getElementById(['Tenlinhvuc']).value;
+                var Mota = document.getElementById(['Mota']).value;
+                var Trangthai = document.getElementById(['Trangthai']).value;
+
+                var formData = {
+                    Malinhvuc: Malinhvuc,
+                    Tenlinhvuc: Tenlinhvuc,
+                    Mota: Mota,
+                    Trangthai: Trangthai
+                };
+                createField(formData);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
